@@ -150,8 +150,8 @@ const EducationServices = () => {
             Looking for Top-Notch Education Services?
           </h3>
           <p className="mt-6 text-gray-700 leading-relaxed text-center text-lg max-w-4xl">
-            At <a href="https://www.dfmseducation.com/" target="_blank" rel="noopener noreferrer" className="font-bold text-orange-500 hover:text-orange-600 transition-colors">DFMS</a>, 
-            a proud subsidiary of <a href="https://www.meta-grow.in/static/about-us.aspx" target="_blank" rel="noopener noreferrer" className="font-bold text-orange-500 hover:text-orange-600 transition-colors">Meta Arth</a>, 
+            At <a href="https://www.dfmseducation.com/" target="_blank" rel="noopener noreferrer" className="font-bold !text-orange-500 hover:text-orange-600 transition-colors">DFMS</a>, 
+            a proud subsidiary of <a href="https://www.meta-grow.in/static/about-us.aspx" target="_blank" rel="noopener noreferrer" className="font-bold !text-orange-500 hover:text-orange-600 transition-colors">METAARTH</a>, 
             we are committed to revolutionizing the education sector with innovative and personalized learning solutions. 
             DFMS offers a wide range of services, including aptitude assessments, career counseling, study management plans, 
             seminars, motivational sessions, and much more.
@@ -160,7 +160,7 @@ const EducationServices = () => {
             href="https://www.dfmseducation.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-xl mt-8 text-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="inline-block bg-gradient-to-r from-orange-500 to-orange-600 !text-white px-10 py-4 rounded-xl mt-8 text-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

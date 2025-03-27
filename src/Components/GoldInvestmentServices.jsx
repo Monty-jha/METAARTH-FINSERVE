@@ -71,7 +71,7 @@ const GoldInvestmentServices = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-3xl font-bold text-orange-500 mb-4">Looking for Top-Notch Gold Solutions?</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">Looking for Top-Notch Gold Solutions?</h2>
         <p className="text-gray-800">
           At <a href="https://meta-grow.in/static/about-us.aspx" target="_blank"><strong className="text-orange-500">META ARTH</strong></a>, we believe in delivering excellence and trust in the world of gold investments and jewelry. Our child company, <a href="https://pingakshajewels.com/" target="_blank"><strong className="text-orange-500">Pingaksha Jewels</strong></a>, specializes in premium gold-related services, ensuring quality, security, and luxury in every offering.
         </p>
