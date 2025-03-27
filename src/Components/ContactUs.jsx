@@ -130,7 +130,7 @@ const ContactUs = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-semibold mb-1">Email1</label>
+                <label className="block text-gray-700 font-semibold mb-1">Email</label>
                 <input
                   type="email"
                   placeholder="Enter your email"
