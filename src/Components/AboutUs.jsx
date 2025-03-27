@@ -96,19 +96,33 @@ const AboutUs = () => {
           </div>
         </motion.div>
 
-        {/* Image Slideshow Section - Fixed Height Adjusted */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }} 
-          animate={{ opacity: 1, x: 0 }} 
-          transition={{ duration: 0.8 }} 
-          className="lg:w-1/2 h-[520px] flex items-center justify-center relative"
-        >
+        {/* Enhanced Image Slideshow Section */}
+<motion.div 
+  initial={{ opacity: 0, x: 50 }} 
+  animate={{ opacity: 1, x: 0 }} 
+  transition={{ duration: 0.8 }} 
+  className="lg:w-1/2 h-[520px] relative overflow-hidden rounded-xl shadow-2xl mt-[-260px]"
+>
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
           <motion.img 
             key={currentImage}
             src={imageSources[currentImage]}
             alt="Metaarth Image" 
-            className="rounded-lg shadow-lg w-full h-full object-cover transition-opacity duration-700 absolute top-[-130px]"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              transition: { duration: 1.5, ease: "easeOut" }
+            }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 w-full h-full object-cover"
           />
+         
         </motion.div>
       </div>
 
