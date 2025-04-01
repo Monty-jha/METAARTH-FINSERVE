@@ -21,23 +21,26 @@ function App() {
         <Navbar />
         <main className="flex-grow pt-16">
           <Routes>
+            <Route path="/" element={
+              <>
+                <HomePage />
+                <WealthPicks />
+                <WhyInvest />
+              </>
+            } />
             <Route path="/Home" element={
               <>
                 <HomePage />
                 <WealthPicks />
                 <WhyInvest />
-            
-               
               </>
             } />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/wealth-picks" element={<WealthPicks />} />
-            <Route path="/Contact" element={<ContactUs />} />
+            <Route path="/contact" element={<ContactUs />} />
             <Route path="/it-services" element={<ITServices />} />
             <Route path="/education-services" element={<EducationServices />} />
             <Route path="/gold-investment-services" element={<GoldInvestmentServices />} />
-
-            
           </Routes>
         </main>
         <Footer />
