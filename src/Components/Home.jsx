@@ -11,7 +11,7 @@ function HomePage() {
       title: "IT Solutions",
       subtitle: "Digital Innovation",
       description: "Transform your business with cutting-edge technology solutions.",
-      buttonLink: "/it-investment",
+      buttonLink: "/it-services",
     },
     {
       url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2070&q=80",
@@ -19,7 +19,7 @@ function HomePage() {
       title: "Education",
       subtitle: "Future Learning",
       description: "Invest in the future of education with innovative learning platforms.",
-      buttonLink: "/education-investment",
+      buttonLink: "/education-services",
     },
     {
       url: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=2069&q=80",
@@ -35,7 +35,7 @@ function HomePage() {
       title: "Gold Investment",
       subtitle: "Secure Assets",
       description: "Build a stable portfolio with strategic investments in gold.",
-      buttonLink: "/gold-investment",
+      buttonLink: "/gold-investment-services",
     },
     {
       url: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=2070&q=80",
