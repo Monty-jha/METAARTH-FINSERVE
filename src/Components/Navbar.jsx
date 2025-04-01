@@ -14,7 +14,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", path: "/" },
+  { name: "Home", path: "/Home" },
   { name: "About Us", path: "/about" },
   { name: "Services", path: "#", isDropdown: true },
   { name: "Contact Us", path: "/contact" },
@@ -54,7 +54,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <img src={logo} alt="Your Company Logo" className="h-10 sm:h-12 md:h-15 w-auto" />
+            <Link 
+              to="/Home" 
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="block"
+            >
+              <img src={logo} alt="Your Company Logo" className="h-10 sm:h-12 md:h-15 w-auto" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <main className="flex-grow pt-16">
           <Routes>
-            <Route path="/" element={
+            <Route path="/Home" element={
               <>
                 <HomePage />
                 <WealthPicks />
