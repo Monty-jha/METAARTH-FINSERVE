@@ -25,7 +25,7 @@ const services = [
   { name: "Education", path: "/education-services", description: "Quality educational services", icon: AcademicCapIcon },
   { name: "Pharmaceuticals", path: "/pharmaceutical-services", description: "Healthcare and medical solutions", icon: BeakerIcon },
   { name: "Gold Investment", path: "/gold-investment-services", description: "Secure gold investment options", icon: CurrencyDollarIcon },
-  { name: "Mutual Funds", path: "https://meta-grow.in/", description: "Expert mutual fund investment solutions", icon: BanknotesIcon }
+  { name: "Mutual Funds", path: "/financial-services", description: "Expert mutual fund investment solutions", icon: BanknotesIcon }
 ];
 
 const dropdownVariants = {
@@ -77,7 +77,7 @@ export default function Navbar() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className="group bg-white text-orange-500 border border-orange-500 px-3 lg:px-5 py-2 rounded-full font-semibold shadow-md transition-colors duration-300 ease-in-out flex items-center justify-center hover:bg-orange-500 hover:text-white text-sm lg:text-base"
+                  className="group bg-white !text-orange-500 border border-orange-500 px-3 lg:px-5 py-2 rounded-full font-semibold shadow-md transition-colors duration-300 ease-in-out flex items-center justify-center hover:bg-orange-500 hover:text-white text-sm lg:text-base"
                 >
                   <span className="group-hover:text-white">{item.name}</span>
                   {item.isDropdown && (

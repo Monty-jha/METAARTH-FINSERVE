@@ -12,6 +12,7 @@ import ITServices from "./Components/ITServices";
 import EducationServices from "./Components/EducationServices";
 import GoldInvestmentServices from "./Components/GoldInvestmentServices";
 import PharmaceuticalServices from "./Components/PharmaceuticalServices";
+import FinancialServices from "./Components/FinancialServices";
 
 
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/education-services" element={<EducationServices />} />
             <Route path="/gold-investment-services" element={<GoldInvestmentServices />} />
             <Route path="/pharmaceutical-services" element={<PharmaceuticalServices />} />
+            <Route path="/financial-services" element={<FinancialServices />} />
           </Routes>
         </main>
         <Footer />

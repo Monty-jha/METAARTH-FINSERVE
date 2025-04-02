@@ -27,7 +27,7 @@ function HomePage() {
       title: "Pharmaceuticals",
       subtitle: "Healthcare Growth",
       description: "Explore investment opportunities in breakthrough medical research.",
-      buttonLink: "/pharma-investment",
+      buttonLink: "/pharmaceutical-services",
     },
     {
       url: "https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=2070&q=80",
@@ -43,7 +43,7 @@ function HomePage() {
       title: "Mutual Funds",
       subtitle: "Diversified Growth",
       description: "Maximize your returns with expertly managed mutual fund portfolios.",
-      buttonLink: "/mutual-funds",
+      buttonLink: "/financial-services",
     },
   ];
 
