@@ -7,16 +7,17 @@ const AboutUs = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % 4);
-    }, 4000);
+      setCurrentImage((prev) => (prev + 1) % 5);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   const imageSources = [
-    'https://internationaljournalofresearch.com/wp-content/uploads/2020/06/wp-1591971173829.jpg?w=438',
-    'https://media.istockphoto.com/id/800359302/photo/summer-park.jpg?s=612x612&w=0&k=20&c=5dT490lWX65Bj9jsk397l0ba8vUiu7WL8qlUU0V1LP0=',
-    'https://cdn.pixabay.com/photo/2020/06/01/21/19/park-5248514_640.jpg',
-    'https://m.media-amazon.com/images/I/71S-eCc6asL._AC_UF1000,1000_QL80_.jpg'
+    'https://media.istockphoto.com/id/1322517295/photo/cyber-security-it-engineer-working-on-protecting-network-against-cyberattack-from-hackers-on.jpg?s=612x612&w=0&k=20&c=htR0b1KO2UFS_R1FWiJOsPfIwf3xBtKXd7FXb4KS0Ls=',
+    'https://habitatbroward.org/wp-content/uploads/2020/01/10-Benefits-Showing-Why-Education-Is-Important-to-Our-Society.jpg',
+    'https://ryzerpharma.com/wp-content/uploads/2024/05/types-of-Pharmaceutical-Industry.jpg',
+    'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202411/67374302c0d98-the-decline-in-gold-prices-was-largely-attributed-to-the-strength-of-the-us-dollar-following-the-us-154756884-16x9.jpg?size=948:533',
+    'https://media.istockphoto.com/id/1617910856/photo/mutual-funds-business-stock-profit-growth-investment-money-income-mutual-banking-asset.jpg?s=612x612&w=0&k=20&c=6rn0oyeFvlMC1yQceI_QrIs1LEi-ZLGiH8D93-kQcHY=',
   ];
 
   const handleClick = () => {
@@ -26,7 +27,7 @@ const AboutUs = () => {
   return (
     <div className="relative bg-gray-100 py-17 px-6 lg:px-20 overflow-hidden">
       {/* Background Animation */}
-      <div className="absolute inset-0 bg-gradient-to-br from-red-400 via-orange-300 to-yellow-200 opacity-20 animate-pulse"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-red-400 via-orange-300 to-yellow-200 opacity-20 animate-pulse"></div> */}
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 relative z-10">
         {/* Content Section */}
@@ -117,7 +118,7 @@ const AboutUs = () => {
             animate={{ 
               opacity: 1, 
               scale: 1,
-              transition: { duration: 1.5, ease: "easeOut" }
+              transition: { duration: 1, ease: "easeOut" }
             }}
             exit={{ opacity: 0 }}
             className="absolute inset-0 w-full h-full object-cover"
