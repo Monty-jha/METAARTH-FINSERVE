@@ -25,10 +25,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="relative bg-gray-100 py-17 px-6 lg:px-20 overflow-hidden">
-      {/* Background Animation */}
-      {/* <div className="absolute inset-0 bg-gradient-to-br from-red-400 via-orange-300 to-yellow-200 opacity-20 animate-pulse"></div> */}
-
+    <div className="relative bg-[#E0E0E0] py-17 px-6 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 relative z-10">
         {/* Content Section */}
         <motion.div 
@@ -79,6 +76,16 @@ const AboutUs = () => {
                   "Jewelry repair and maintenance services",
                   "Certified gold purity testing"
                 ]
+              },
+              {
+                title: "MetaHealth Pharmaceuticals – Advancing Healthcare Solutions",
+                points: [
+                  "Research and development of innovative medicines",
+                  "State-of-the-art manufacturing facilities",
+                  "Quality control and regulatory compliance",
+                  "Distribution network across major healthcare institutions",
+                  "Focus on affordable healthcare solutions"
+                ]
               }
             ].map((business, index) => (
               <motion.div 
@@ -98,12 +105,12 @@ const AboutUs = () => {
         </motion.div>
 
         {/* Enhanced Image Slideshow Section */}
-<motion.div 
-  initial={{ opacity: 0, x: 50 }} 
-  animate={{ opacity: 1, x: 0 }} 
-  transition={{ duration: 0.8 }} 
-  className="lg:w-1/2 h-[520px] relative overflow-hidden rounded-xl shadow-2xl mt-[-260px]"
->
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }} 
+          animate={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 0.8 }} 
+          className="lg:w-1/2 h-[520px] relative overflow-hidden rounded-xl shadow-2xl mt-[-440px]"
+        >
           <motion.div
             className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"
             initial={{ opacity: 0 }}

@@ -23,7 +23,7 @@ const navigation = [
 const services = [
   { name: "IT Services", path: "/it-services", description: "Professional IT solutions and support", icon: ComputerDesktopIcon },
   { name: "Education", path: "/education-services", description: "Quality educational services", icon: AcademicCapIcon },
-  { name: "Pharmaceuticals", path: "/pharmaceuticals", description: "Healthcare and medical solutions", icon: BeakerIcon },
+  { name: "Pharmaceuticals", path: "/pharmaceutical-services", description: "Healthcare and medical solutions", icon: BeakerIcon },
   { name: "Gold Investment", path: "/gold-investment-services", description: "Secure gold investment options", icon: CurrencyDollarIcon },
   { name: "Mutual Funds", path: "https://meta-grow.in/", description: "Expert mutual fund investment solutions", icon: BanknotesIcon }
 ];
