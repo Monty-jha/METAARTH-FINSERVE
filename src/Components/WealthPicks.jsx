@@ -1,155 +1,611 @@
-import React from "react";
+import React from 'react';
+import { Globe2, Wallet, GraduationCap, Stethoscope, Diamond, Code, TrendingUp, PiggyBank, GanttChart, BookOpen, Pill, Gem, ChevronRight, Cloud, Database, Laptop, Brain, School, Users, HeartPulse, Microscope, FlaskRound as Flask, Crown, Scale, Coins } from 'lucide-react';
 
-// Wealth Picks Data
-const wealthPicks = [
-  {
-    title: "LIQUID FUNDS",
-    description:
-      "Liquid funds are a type of mutual fund that invests in short-term money markets instruments such as treasury bills, commercial papers, and certificates of deposit with a residual maturity of up to 91 days...",
-    icon: "💰",
-  },
-  {
-    title: "ULTRA SHORT PLANS",
-    description:
-      "Ultra Short Term Plans in Mutual Funds are a type of debt mutual fund that invests in fixed-income instruments such as treasury bills, commercial papers, and other money market instruments...",
-    icon: "📈",
-  },
-  {
-    title: "CHILDREN PLAN",
-    description:
-      "A Children’s Plan is a type of mutual fund that is designed to help parents save and invest for their child's future...",
-    icon: "👶",
-  },
-  {
-    title: "RETIREMENT PLAN",
-    description:
-      "A Retirement Plan in a mutual fund is a type of investment vehicle that is designed to help individuals save and invest for their retirement...",
-    icon: "🏦",
-  },
-  {
-    title: "SAVE TAX",
-    description:
-      "Mutual funds provide an excellent avenue to save tax in India under Section 80C of the Income Tax Act...",
-    icon: "📜",
-  },
-];
+const MetaarthHome = () => {
+  const [activeSection, setActiveSection] = React.useState('metagrow');
 
-// Goal-Based Investing Data
-const goalBasedInvesting = [
-  {
-    title: "HOUSE",
-    subtitle: "Own a",
-    image:
-      "https://cdn.pixabay.com/photo/2016/03/27/17/40/architecture-1282302_1280.jpg",
-  },
-  {
-    title: "DREAM CAR",
-    subtitle: "Buy a",
-    image:
-      "https://cdn.pixabay.com/photo/2019/11/26/00/59/car-4654414_1280.jpg",
-  },
-  {
-    title: "EDUCATION",
-    subtitle: "Child",
-    image:
-      "https://cdn.pixabay.com/photo/2016/11/29/03/53/book-1868068_1280.jpg",
-  },
-  {
-    title: "RETIRE",
-    subtitle: "Easy",
-    image:
-      "https://cdn.pixabay.com/photo/2016/11/23/14/45/retiree-1855150_1280.jpg",
-  },
-  {
-    title: "VACATION",
-    subtitle: "Plan a",
-    image:
-      "https://cdn.pixabay.com/photo/2017/08/30/07/52/luggage-2697948_1280.jpg",
-  },
-];
-
-const WealthPicks = () => {
   return (
-    <div className="w-screen min-h-screen bg-gray-100">
-      {/* Wealth Picks Section (First) */}
-      <div className="relative w-screen h-screen flex items-center justify-center p-6">
-        <div className="relative flex flex-col md:flex-row items-center w-full h-full bg-white shadow-xl rounded-[20px] overflow-hidden">
-          {/* Left Side Image (Behind the Right Side) */}
-          <div className="absolute top-0 left-0 w-3/5 h-full z-0">
-            <img
-              src="https://www.webii.net/blog/wp-content/uploads/2016/01/bigstock-Web-Design-Web-Development-Res-95465387.jpg"
-              alt="Business Meeting"
-              className="w-full h-full object-cover rounded-[20px] opacity-80"
-            />
-          </div>
-
-          {/* Right Side: Wealth Picks Section (Above the Image) */}
-          <div className="relative w-full md:w-3/5 h-full p-50 md:p-12 bg-white flex flex-col justify-center z-10 rounded-[20px] shadow-2xl">
-            {/* Watermark Logo */}
-            <div
-              className="absolute inset-0 opacity-10 bg-center bg-contain bg-no-repeat rounded-[20px]"
-              style={{
-                backgroundImage:
-                  "url('https://www.foundit.in/career-advice/wp-content/uploads/2023/05/What-is-Professional-Development.jpg')",
-              }}
-            ></div>
-
+    <div className="w-screen min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
+      {/* Hero Section with Navigation */}
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 relative">
+        <h1 className="text-6xl font-bold text-white mb-12 text-center">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Metaarth</span></h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl w-full">
+          <button 
+            onClick={() => setActiveSection('metagrow')}
+            className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
+              activeSection === 'metagrow' ? '!bg-green-400/20 scale-105' : '!bg-gray-800/50 hover:bg-green-400/10'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Top 5 Wealth Picks
-              </h2>
-
-              <div className="space-y-8">
-                {wealthPicks.map((pick, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <span className="text-4xl">{pick.icon}</span>
-                    <div>
-                      <h3 className="font-semibold text-red-600 text-lg">
-                        {pick.title}
-                      </h3>
-                      <p className="text-gray-700 text-base">
-                        {pick.description}{" "}
-                        <a href="#" className="text-black font-semibold">
-                          Read More
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <Wallet className={`w-12 h-12 mb-4 transition-all duration-500 ${
+                activeSection === 'metagrow' ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'
+              }`} />
+              <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
+                activeSection === 'metagrow' ? 'text-green-400' : 'text-white group-hover:text-green-400'
+              }`}>METAGROW</h3>
+              <p className="text-gray-400">Financial Excellence & Wealth Management</p>
             </div>
+          </button>
+
+          <button 
+            onClick={() => setActiveSection('microdigital')}
+            className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
+              activeSection === 'microdigital' ? '!bg-blue-400/20 scale-105' : '!bg-gray-800/50 hover:bg-blue-400/10'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
+            <div className="relative z-10">
+              <Code className={`w-12 h-12 mb-4 transition-all duration-500 ${
+                activeSection === 'microdigital' ? 'text-blue-400' : 'text-gray-400 group-hover:text-blue-400'
+              }`} />
+              <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
+                activeSection === 'microdigital' ? 'text-blue-400' : 'text-white group-hover:text-blue-400'
+              }`}>MICRODIGITAL</h3>
+              <p className="text-gray-400">Digital Innovation & Technology Solutions</p>
+            </div>
+          </button>
+
+          <button 
+            onClick={() => setActiveSection('dfms')}
+            className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
+              activeSection === 'dfms' ? '!bg-purple-400/20 scale-105' : '!bg-gray-800/50 hover:bg-purple-400/10'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
+            <div className="relative z-10">
+              <GraduationCap className={`w-12 h-12 mb-4 transition-all duration-500 ${
+                activeSection === 'dfms' ? 'text-purple-400' : 'text-gray-400 group-hover:text-purple-400'
+              }`} />
+              <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
+                activeSection === 'dfms' ? 'text-purple-400' : 'text-white group-hover:text-purple-400'
+              }`}>DFMS</h3>
+              <p className="text-gray-400">Digital Future Management System</p>
+            </div>
+          </button>
+
+          <button 
+            onClick={() => setActiveSection('metahealth')}
+            className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
+              activeSection === 'metahealth' ? '!bg-red-400/20 scale-105' : '!bg-gray-800/50 hover:bg-red-400/10'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
+            <div className="relative z-10">
+              <Stethoscope className={`w-12 h-12 mb-4 transition-all duration-500 ${
+                activeSection === 'metahealth' ? 'text-red-400' : 'text-gray-400 group-hover:text-red-400'
+              }`} />
+              <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
+                activeSection === 'metahealth' ? 'text-red-400' : 'text-white group-hover:text-red-400'
+              }`}>METAHEALTH</h3>
+              <p className="text-gray-400">Healthcare Innovation & Solutions</p>
+            </div>
+          </button>
+
+          <button 
+            onClick={() => setActiveSection('pingaksha')}
+            className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
+              activeSection === 'pingaksha' ? '!bg-yellow-400/20 scale-105' : '!bg-gray-800/50 hover:bg-yellow-400/10'
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
+            <div className="relative z-10">
+              <Diamond className={`w-12 h-12 mb-4 transition-all duration-500 ${
+                activeSection === 'pingaksha' ? 'text-yellow-400' : 'text-gray-400 group-hover:text-yellow-400'
+              }`} />
+              <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
+                activeSection === 'pingaksha' ? 'text-yellow-400' : 'text-white group-hover:text-yellow-400'
+              }`}>PINGAKSHA</h3>
+              <p className="text-gray-400">Luxury Jewelry & Investment Gold</p>
+            </div>
+          </button>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+          <div className="animate-bounce text-gray-400">
+            <ChevronRight className="w-8 h-8 rotate-90" />
           </div>
         </div>
       </div>
 
-      {/* Goal-Based Investing Section (Second) */}
-      <div className="w-screen h-screen flex flex-col items-center justify-center text-center py-12">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Goal Based Investing
-        </h2>
-        <p className="text-gray-600 mt-2">
-          Every Important Journey Has A Destination. Similarly, Every Investment
-          Should Have A Goal.
-        </p>
-
-        {/* Goals Container */}
-        <div className="flex justify-center gap-6 flex-wrap mt-8 px-6">
-          {goalBasedInvesting.map((goal, index) => (
-            <div key={index} className="text-center">
-              <div
-                className="w-48 h-48 bg-cover bg-center rounded-full relative overflow-hidden shadow-lg"
-                style={{ backgroundImage: `url(${goal.image})` }}
-              >
-                <div className="absolute inset-0 bg-black opacity-30"></div>
+      {/* Content Sections */}
+      {/* METAGROW Section */}
+      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'metagrow' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-green-400/10 to-transparent rounded-3xl overflow-hidden border border-green-400/20 p-8">
+            <div className="flex items-center space-x-4 mb-8">
+              <Wallet className="w-16 h-16 text-green-400" />
+              <div>
+                <h2 className="text-4xl font-bold text-white">METAGROW</h2>
+                <p className="text-green-400">Financial Excellence & Wealth Management</p>
               </div>
-              <p className="mt-3 text-gray-700">{goal.subtitle}</p>
-              <h3 className="text-lg font-bold text-black">{goal.title}</h3>
             </div>
-          ))}
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Your Financial Growth Partner</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  METAGROW is your trusted partner in wealth creation and financial planning. We combine cutting-edge technology with expert financial advice to deliver superior investment solutions tailored to your goals.
+                </p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-green-400 mb-4">Key Metrics</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">₹1000Cr+</div>
+                    <div className="text-gray-400">Assets Managed</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">50K+</div>
+                    <div className="text-gray-400">Happy Investors</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <TrendingUp className="w-10 h-10 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Mutual Funds</h3>
+                <p className="text-gray-400 mb-4">Expert-curated mutual fund portfolios designed for optimal returns across different risk profiles.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Equity Funds</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Debt Funds</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Hybrid Funds</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <PiggyBank className="w-10 h-10 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">SIP Investments</h3>
+                <p className="text-gray-400 mb-4">Systematic Investment Plans for disciplined wealth creation and long-term financial success.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Flexible Plans</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Top-up Facility</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Goal-based SIPs</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <GanttChart className="w-10 h-10 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Portfolio Management</h3>
+                <p className="text-gray-400 mb-4">Comprehensive portfolio management services with personalized strategies.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Risk Assessment</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Asset Allocation</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <span>Regular Rebalancing</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* MICRODIGITAL Section */}
+      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'microdigital' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-400/10 to-transparent rounded-3xl overflow-hidden border border-blue-400/20 p-8">
+            <div className="flex items-center space-x-4 mb-8">
+              <Code className="w-16 h-16 text-blue-400" />
+              <div>
+                <h2 className="text-4xl font-bold text-white">MICRODIGITAL</h2>
+                <p className="text-blue-400">Digital Innovation & Technology Solutions</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Transforming Business Through Technology</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  MICRODIGITAL empowers businesses with cutting-edge digital solutions. We specialize in cloud computing, custom software development, and digital transformation services that drive growth and innovation.
+                </p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-blue-400 mb-4">Our Impact</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">200+</div>
+                    <div className="text-gray-400">Projects Delivered</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">98%</div>
+                    <div className="text-gray-400">Client Satisfaction</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Cloud className="w-10 h-10 text-blue-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Cloud Solutions</h3>
+                <p className="text-gray-400 mb-4">Enterprise-grade cloud infrastructure and services for modern businesses.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Cloud Migration</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>DevOps Services</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Cloud Security</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Laptop className="w-10 h-10 text-blue-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Software Development</h3>
+                <p className="text-gray-400 mb-4">Custom software solutions tailored to your unique business requirements.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Web Applications</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Mobile Apps</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Enterprise Software</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Brain className="w-10 h-10 text-blue-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Digital Transformation</h3>
+                <p className="text-gray-400 mb-4">End-to-end digital transformation services for enterprise evolution.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Process Automation</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Digital Strategy</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-blue-400" />
+                    <span>Technology Consulting</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DFMS Section */}
+      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'dfms' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-purple-400/10 to-transparent rounded-3xl overflow-hidden border border-purple-400/20 p-8">
+            <div className="flex items-center space-x-4 mb-8">
+              <GraduationCap className="w-16 h-16 text-purple-400" />
+              <div>
+                <h2 className="text-4xl font-bold text-white">DFMS</h2>
+                <p className="text-purple-400">Digital Future Management System</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Revolutionizing Education</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  DFMS is transforming education through innovative digital solutions. We provide comprehensive learning management systems and educational technology solutions that enhance the learning experience.
+                </p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-purple-400 mb-4">Educational Impact</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">100K+</div>
+                    <div className="text-gray-400">Students Reached</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">500+</div>
+                    <div className="text-gray-400">Institutions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <School className="w-10 h-10 text-purple-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Learning Management</h3>
+                <p className="text-gray-400 mb-4">Comprehensive digital learning platforms for modern education.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Virtual Classrooms</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Assessment Tools</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Progress Tracking</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Users className="w-10 h-10 text-purple-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Skill Development</h3>
+                <p className="text-gray-400 mb-4">Industry-focused skill development programs for career growth.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Technical Skills</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Soft Skills</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Career Guidance</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <BookOpen className="w-10 h-10 text-purple-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Educational Content</h3>
+                <p className="text-gray-400 mb-4">High-quality educational content and resources for effective learning.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Interactive Courses</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Digital Libraries</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-purple-400" />
+                    <span>Research Resources</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* METAHEALTH Section */}
+      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'metahealth' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-red-400/10 to-transparent rounded-3xl overflow-hidden border border-red-400/20 p-8">
+            <div className="flex items-center space-x-4 mb-8">
+              <Stethoscope className="w-16 h-16 text-red-400" />
+              <div>
+                <h2 className="text-4xl font-bold text-white">METAHEALTH</h2>
+                <p className="text-red-400">Healthcare Innovation & Solutions</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Advancing Healthcare</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  METAHEALTH is at the forefront of healthcare innovation, combining cutting-edge technology with pharmaceutical expertise to deliver superior healthcare solutions and services.
+                </p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-red-400 mb-4">Healthcare Impact</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">1M+</div>
+                    <div className="text-gray-400">Patients Served</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">50+</div>
+                    <div className="text-gray-400">Research Papers</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Flask className="w-10 h-10 text-red-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Pharmaceutical Research</h3>
+                <p className="text-gray-400 mb-4">Advanced research and development in pharmaceutical sciences.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Drug Development</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Clinical Trials</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Quality Control</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <HeartPulse className="w-10 h-10 text-red-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Healthcare Technology</h3>
+                <p className="text-gray-400 mb-4">Digital solutions for modern healthcare delivery and management.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Telemedicine</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Health Records</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Patient Care</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Microscope className="w-10 h-10 text-red-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Medical Research</h3>
+                <p className="text-gray-400 mb-4">Pioneering research in medical science and healthcare innovation.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Biotech Research</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Medical Devices</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <span>Healthcare AI</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PINGAKSHA Section */}
+      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'pingaksha' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl overflow-hidden border border-yellow-400/20 p-8">
+            <div className="flex items-center space-x-4 mb-8">
+              <Diamond className="w-16 h-16 text-yellow-400" />
+              <div>
+                <h2 className="text-4xl font-bold text-white">PINGAKSHA JEWELS</h2>
+                <p className="text-yellow-400">Luxury Jewelry & Investment Gold</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h3 className="text-2xl font-semibold text-white mb-4">Crafting Excellence</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Pingaksha Jewels combines traditional craftsmanship with modern design to create exquisite gold jewelry. We offer both luxury pieces and investment opportunities in precious metals.
+                </p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-yellow-400 mb-4">Our Legacy</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">25+</div>
+                    <div className="text-gray-400">Years Experience</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-800 rounded-lg">
+                    <div className="text-3xl font-bold text-white">10K+</div>
+                    <div className="text-gray-400">Happy Clients</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Crown className="w-10 h-10 text-yellow-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Luxury Collections</h3>
+                <p className="text-gray-400 mb-4">Exquisite gold jewelry collections for every occasion.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Bridal Jewelry</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Designer Pieces</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Custom Orders</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Scale className="w-10 h-10 text-yellow-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Investment Gold</h3>
+                <p className="text-gray-400 mb-4">Secure your wealth with our gold investment solutions.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Gold Bars</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Gold Coins</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Gold Schemes</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
+                <Coins className="w-10 h-10 text-yellow-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Gold Services</h3>
+                <p className="text-gray-400 mb-4">Comprehensive services for all your gold needs.</p>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Jewelry Exchange</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Gold Appraisal</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <ChevronRight className="w-4 h-4 text-yellow-400" />
+                    <span>Safe Storage</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default WealthPicks;
+export default MetaarthHome;

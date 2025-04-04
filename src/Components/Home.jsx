@@ -180,7 +180,7 @@ function HomePage() {
                 key={index}
                 variants={cardVariants}
                 whileHover="hover"
-                className="bg-[#B3EBF2] rounded-2xl overflow-hidden shadow-lg group"
+                className="bg-[#E0E0E0] backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg group"
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -241,7 +241,7 @@ function HomePage() {
                 key={index}
                 variants={cardVariants}
                 whileHover="hover"
-                className="bg-[#B3EBF2] rounded-2xl overflow-hidden shadow-lg group"
+                className="bg-[#E0E0E0] rounded-2xl overflow-hidden shadow-lg group"
               >
                 <div className="relative overflow-hidden">
                   <img 

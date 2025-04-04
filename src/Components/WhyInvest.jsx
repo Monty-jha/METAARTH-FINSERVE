@@ -9,30 +9,35 @@ const features = [
     description: "Operating across multiple industries with our innovative subsidiaries - Microdigitall, DFMS, Pharmaceuticals, Pingaksha Jewels, and Metagrow.",
     icon: Globe,
     color: "text-blue-400",
+    link: "/global-presence"
   },
   {
     title: "INNOVATION DRIVEN",
     description: "Pioneering technological advancements and solutions that shape the future of business across all sectors.",
     icon: Lightbulb,
     color: "text-yellow-400",
+    link: "/innovation"
   },
   {
     title: "TRUSTED EXPERTISE",
     description: "Over a decade of experience in delivering excellence through our diverse portfolio of companies.",
     icon: Shield,
     color: "text-green-400",
+    link: "/expertise"
   },
   {
     title: "CLIENT SUCCESS",
     description: "Dedicated to transforming businesses and enriching lives through our comprehensive range of services.",
     icon: Users,
     color: "text-purple-400",
+    link: "/client-success"
   },
   {
     title: "SUSTAINABLE GROWTH",
     description: "Committed to creating long-term value while maintaining the highest standards of corporate responsibility.",
     icon: TrendingUp,
     color: "text-orange-400",
+    link: "/sustainability"
   },
 ];
 
@@ -41,26 +46,31 @@ const subsidiaries = [
     name: "Microdigitall",
     description: "Cutting-edge IT solutions transforming businesses through digital innovation",
     gradient: "from-blue-600 to-cyan-400",
+    link: "https://microdigitall.com/"
   },
   {
     name: "DFMS",
     description: "Revolutionary educational platforms reshaping the future of learning",
     gradient: "from-purple-600 to-pink-400",
+    link: "https://www.dfmseducation.com/"
   },
   {
     name: "Pharmaceuticals",
     description: "Advanced medical research and healthcare solutions for a healthier tomorrow",
     gradient: "from-green-600 to-emerald-400",
+    link: "/pharmaceutical-services"
   },
   {
     name: "Pingaksha Jewels",
     description: "Premium gold investment opportunities and exquisite jewelry collections",
     gradient: "from-yellow-600 to-amber-400",
+    link: "https://pingakshajewels.com/"
   },
   {
     name: "Metagrow",
     description: "Innovative financial solutions for sustainable wealth creation",
     gradient: "from-red-600 to-orange-400",
+    link: "https://meta-grow.in/static/about-us.aspx"
   },
 ];
 
@@ -133,18 +143,21 @@ const WhyChoose = () => {
           className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-20"
         >
           {features.map((feature, index) => (
-            <motion.div
+            <motion.a
+              href={feature.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
               variants={cardVariants}
               whileHover={{ scale: 1.05 }}
-              className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 hover:border-gray-500 transition-all duration-300"
+              className="bg-gray-800/50 backdrop-blur-lg rounded-xl p-6 border border-gray-700 hover:border-gray-500 transition-all duration-300 cursor-pointer"
             >
               <div className="flex flex-col items-center text-center">
                 <feature.icon className={`w-12 h-12 ${feature.color} mb-4`} />
                 <h3 className="text-lg font-semibold mb-3 text-orange-400">{feature.title}</h3>
                 <p className="text-gray-300 text-sm">{feature.description}</p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -160,17 +173,20 @@ const WhyChoose = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
         >
           {firstThreeCards.map((subsidiary, index) => (
-            <motion.div
+            <motion.a
+              href={subsidiary.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
               variants={cardVariants}
               whileHover={{ scale: 1.03 }}
-              className={`bg-gradient-to-r ${subsidiary.gradient} p-[2px] rounded-xl`}
+              className={`bg-gradient-to-r ${subsidiary.gradient} p-[2px] rounded-xl cursor-pointer`}
             >
               <div className="bg-gray-900 rounded-xl p-6 h-full">
                 <h4 className="text-xl font-bold mb-3">{subsidiary.name}</h4>
                 <p className="text-gray-300 text-sm">{subsidiary.description}</p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -180,17 +196,20 @@ const WhyChoose = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[66%] mx-auto"
         >
           {lastTwoCards.map((subsidiary, index) => (
-            <motion.div
+            <motion.a
+              href={subsidiary.link}
+              target="_blank"
+              rel="noopener noreferrer"
               key={index}
               variants={cardVariants}
               whileHover={{ scale: 1.03 }}
-              className={`bg-gradient-to-r ${subsidiary.gradient} p-[2px] rounded-xl`}
+              className={`bg-gradient-to-r ${subsidiary.gradient} p-[2px] rounded-xl cursor-pointer`}
             >
               <div className="bg-gray-900 rounded-xl p-6 h-full">
                 <h4 className="text-xl font-bold mb-3">{subsidiary.name}</h4>
                 <p className="text-gray-300 text-sm">{subsidiary.description}</p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
 
@@ -199,13 +218,16 @@ const WhyChoose = () => {
           variants={itemVariants}
           className="text-center mt-20"
         >
-          <motion.button
+          <motion.a
+            href="/contact"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-orange-500 to-pink-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300"
+            className="inline-block bg-gradient-to-r from-orange-500 to-pink-600 !text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all duration-300"
           >
-            Partner With Us
-          </motion.button>
+            Partner With Us Today
+          </motion.a>
         </motion.div>
       </motion.div>
 
