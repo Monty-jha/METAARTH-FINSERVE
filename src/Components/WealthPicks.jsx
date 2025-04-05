@@ -7,7 +7,7 @@ const MetaarthHome = () => {
   return (
     <div className="w-screen min-h-screen bg-gradient-to-b from-gray-900 to-gray-800">
       {/* Hero Section with Navigation */}
-      <div className="min-h-screen flex flex-col items-center justify-center px-4 relative">
+      <div className="min-h-screen flex flex-col items-center justify-center px-4 relative pb-24">
         <h1 className="text-6xl font-bold text-white mb-12 text-center">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">Metaarth</span></h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl w-full">
@@ -110,8 +110,7 @@ const MetaarthHome = () => {
       </div>
 
       {/* Content Sections */}
-      {/* METAGROW Section */}
-      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'metagrow' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'metagrow' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-green-400/10 to-transparent rounded-3xl overflow-hidden border border-green-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
@@ -209,8 +208,7 @@ const MetaarthHome = () => {
         </div>
       </section>
 
-      {/* MICRODIGITAL Section */}
-      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'microdigital' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'microdigital' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-blue-400/10 to-transparent rounded-3xl overflow-hidden border border-blue-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
@@ -308,8 +306,7 @@ const MetaarthHome = () => {
         </div>
       </section>
 
-      {/* DFMS Section */}
-      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'dfms' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'dfms' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-purple-400/10 to-transparent rounded-3xl overflow-hidden border border-purple-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
@@ -407,8 +404,7 @@ const MetaarthHome = () => {
         </div>
       </section>
 
-      {/* METAHEALTH Section */}
-      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'metahealth' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'metahealth' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-red-400/10 to-transparent rounded-3xl overflow-hidden border border-red-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
@@ -476,7 +472,7 @@ const MetaarthHome = () => {
                     <span>Health Records</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4  text-red-400" />
                     <span>Patient Care</span>
                   </li>
                 </ul>
@@ -506,8 +502,7 @@ const MetaarthHome = () => {
         </div>
       </section>
 
-      {/* PINGAKSHA Section */}
-      <section className={`min-h-screen pt-24 px-4 transition-all duration-500 ${activeSection === 'pingaksha' ? 'opacity-100' : 'opacity-0 hidden'}`}>
+      <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'pingaksha' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-r from-yellow-400/10 to-transparent rounded-3xl overflow-hidden border border-yellow-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">

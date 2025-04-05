@@ -125,8 +125,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      {/* Services Section - Updated background color */}
+      <section className="py-24" style={{ backgroundColor: "oklch(0.278 0.033 256.848)" }}>
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -146,7 +146,7 @@ function HomePage() {
                   Choose Excellence
                 </span>
               </h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Across Industries with{" "}
                 <span className="text-orange-500">Metaarth</span>
               </h3>
@@ -155,7 +155,7 @@ function HomePage() {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.6 } }
                 }}
-                className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
               >
                 Your Gateway to Growth in{" "}
                 <span className="text-orange-500 font-semibold">IT</span>,{" "}
