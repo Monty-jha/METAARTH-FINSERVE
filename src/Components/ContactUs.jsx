@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('idle');
+  const form = useRef();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -14,6 +17,7 @@ const ContactUs = () => {
 
   const handleClosePopup = () => {
     setShowPopup(false);
+    setSubmitStatus('idle');
   };
 
   const handleDirectionClick = () => {
@@ -21,6 +25,32 @@ const ContactUs = () => {
       "https://www.google.com/maps/place/DFMS+Investments+pvt+ltd/@26.8431613,80.9492012,21z/data=!3m1!5s0x399bfdb8bdbf1089:0xe970e15e2912fc35!4m15!1m8!3m7!1s0x399bfd0411abfff1:0x87bde02c49c48213!2sSaran+Chambers+2,+Raj+Bhavan+Colony,+The+Mall+Avenue,+Lucknow,+Uttar+Pradesh+226001!3b1!8m2!3d26.8429462!4d80.9492401!16s%2Fg%2F11b77fzfmb!3m5!1s0x399bfd14fe668413:0xd1619899d33cef11!8m2!3d26.843177!4d80.949368!16s%2Fg%2F11t7fbm78f?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D",
       "_blank"
     );
+  };
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    
+    if (!form.current) return;
+
+    setSubmitStatus('loading');
+    
+    try {
+      await emailjs.sendForm(
+        'service_wx305v7', // Replace with your Service ID
+        'template_2syuj3w', // Replace with your Template ID
+        form.current,
+        'EZLMfFrnGp4IW5Hs4' // Replace with your Public Key
+      );
+      
+      setSubmitStatus('success');
+      form.current.reset();
+      setTimeout(() => {
+        handleClosePopup();
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+    }
   };
 
   return (
@@ -104,7 +134,7 @@ const ContactUs = () => {
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           {/* Background with blur effect */}
-          <div className="absolute inset-0  bg-opacity-100 backdrop-blur-md" onClick={handleClosePopup}></div>
+          <div className="absolute inset-0 bg-opacity-100 backdrop-blur-md" onClick={handleClosePopup}></div>
 
           {/* Popup Content */}
           <motion.div
@@ -120,37 +150,56 @@ const ContactUs = () => {
               &times;
             </button>
             <h2 className="text-3xl font-bold text-orange-500 text-center mb-6">Contact Us</h2>
-            <form className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div>
                 <label className="block text-gray-700 font-semibold mb-1">Name</label>
                 <input
                   type="text"
+                  name="user_name"
                   placeholder="Enter your name"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  required
                 />
               </div>
               <div>
                 <label className="block text-gray-700 font-semibold mb-1">Email</label>
                 <input
                   type="email"
+                  name="user_email"
                   placeholder="Enter your email"
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  required
                 />
               </div>
               <div>
                 <label className="block text-gray-700 font-semibold mb-1">Message</label>
                 <textarea
+                  name="message"
                   placeholder="Enter your message"
-                  rows="4"
+                  rows={4}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full !bg-orange-500 text-white font-bold py-3 rounded-lg !hover:bg-orange-600 transition duration-300"
+                disabled={submitStatus === 'loading'}
+                className={`w-full font-bold py-3 rounded-lg transition duration-300 ${
+                  submitStatus === 'loading' 
+                    ? 'bg-gray-400 cursor-not-allowed' 
+                    : '!bg-orange-500 text-white !hover:bg-orange-600'
+                }`}
               >
-                Send Message
+                {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {submitStatus === 'success' && (
+                <p className="text-green-600 text-center font-semibold">Message sent successfully!</p>
+              )}
+              
+              {submitStatus === 'error' && (
+                <p className="text-red-600 text-center font-semibold">Failed to send message. Please try again.</p>
+              )}
             </form>
           </motion.div>
         </div>

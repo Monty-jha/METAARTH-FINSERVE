@@ -9,35 +9,35 @@ const features = [
     description: "Operating across multiple industries with our innovative subsidiaries - Microdigitall, DFMS, Pharmaceuticals, Pingaksha Jewels, and Metagrow.",
     icon: Globe,
     color: "text-blue-400",
-    link: "/global-presence"
+  
   },
   {
     title: "INNOVATION DRIVEN",
     description: "Pioneering technological advancements and solutions that shape the future of business across all sectors.",
     icon: Lightbulb,
     color: "text-yellow-400",
-    link: "/innovation"
+   
   },
   {
     title: "TRUSTED EXPERTISE",
     description: "Over a decade of experience in delivering excellence through our diverse portfolio of companies.",
     icon: Shield,
     color: "text-green-400",
-    link: "/expertise"
+    
   },
   {
     title: "CLIENT SUCCESS",
     description: "Dedicated to transforming businesses and enriching lives through our comprehensive range of services.",
     icon: Users,
     color: "text-purple-400",
-    link: "/client-success"
+    
   },
   {
     title: "SUSTAINABLE GROWTH",
     description: "Committed to creating long-term value while maintaining the highest standards of corporate responsibility.",
     icon: TrendingUp,
     color: "text-orange-400",
-    link: "/sustainability"
+    
   },
 ];
 

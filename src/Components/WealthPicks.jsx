@@ -14,16 +14,16 @@ const MetaarthHome = () => {
           <button 
             onClick={() => setActiveSection('metagrow')}
             className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
-              activeSection === 'metagrow' ? '!bg-green-400/20 scale-105' : '!bg-gray-800/50 hover:bg-green-400/10'
+              activeSection === 'metagrow' ? '!bg-orange-400/20 scale-105' : '!bg-gray-800/50 hover:bg-orange-400/10'
             }`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
             <div className="relative z-10">
               <Wallet className={`w-12 h-12 mb-4 transition-all duration-500 ${
-                activeSection === 'metagrow' ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'
+                activeSection === 'metagrow' ? 'text-orange-400' : 'text-gray-400 group-hover:text-orange-400'
               }`} />
               <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
-                activeSection === 'metagrow' ? 'text-green-400' : 'text-white group-hover:text-green-400'
+                activeSection === 'metagrow' ? 'text-orange-400' : 'text-white group-hover:text-orange-400'
               }`}>METAGROW</h3>
               <p className="text-gray-400">Financial Excellence & Wealth Management</p>
             </div>
@@ -68,16 +68,16 @@ const MetaarthHome = () => {
           <button 
             onClick={() => setActiveSection('metahealth')}
             className={`group relative overflow-hidden rounded-2xl p-8 h-64 transition-all duration-500 ${
-              activeSection === 'metahealth' ? '!bg-red-400/20 scale-105' : '!bg-gray-800/50 hover:bg-red-400/10'
+              activeSection === 'metahealth' ? '!bg-green-400/20 scale-105' : '!bg-gray-800/50 hover:bg-green-400/10'
             }`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"/>
             <div className="relative z-10">
               <Stethoscope className={`w-12 h-12 mb-4 transition-all duration-500 ${
-                activeSection === 'metahealth' ? 'text-red-400' : 'text-gray-400 group-hover:text-red-400'
+                activeSection === 'metahealth' ? 'text-green-400' : 'text-gray-400 group-hover:text-green-400'
               }`} />
               <h3 className={`text-2xl font-bold mb-2 transition-all duration-500 ${
-                activeSection === 'metahealth' ? 'text-red-400' : 'text-white group-hover:text-red-400'
+                activeSection === 'metahealth' ? 'text-green-400' : 'text-white group-hover:text-green-400'
               }`}>METAHEALTH</h3>
               <p className="text-gray-400">Healthcare Innovation & Solutions</p>
             </div>
@@ -112,12 +112,12 @@ const MetaarthHome = () => {
       {/* Content Sections */}
       <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'metagrow' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-green-400/10 to-transparent rounded-3xl overflow-hidden border border-green-400/20 p-8">
+          <div className="bg-gradient-to-r from-orange-400/10 to-transparent rounded-3xl overflow-hidden border border-orange-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
-              <Wallet className="w-16 h-16 text-green-400" />
+              <Wallet className="w-16 h-16 text-orange-400" />
               <div>
                 <h2 className="text-4xl font-bold text-white">METAGROW</h2>
-                <p className="text-green-400">Financial Excellence & Wealth Management</p>
+                <p className="text-orange-400">Financial Excellence & Wealth Management</p>
               </div>
             </div>
 
@@ -129,7 +129,7 @@ const MetaarthHome = () => {
                 </p>
               </div>
               <div className="bg-gray-800/50 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-green-400 mb-4">Key Metrics</h3>
+                <h3 className="text-xl font-semibold text-orange-400 mb-4">Key Metrics</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-gray-800 rounded-lg">
                     <div className="text-3xl font-bold text-white">₹1000Cr+</div>
@@ -145,60 +145,60 @@ const MetaarthHome = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <TrendingUp className="w-10 h-10 text-green-400 mb-4" />
+                <TrendingUp className="w-10 h-10 text-orange-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Mutual Funds</h3>
                 <p className="text-gray-400 mb-4">Expert-curated mutual fund portfolios designed for optimal returns across different risk profiles.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Equity Funds</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Debt Funds</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Hybrid Funds</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <PiggyBank className="w-10 h-10 text-green-400 mb-4" />
+                <PiggyBank className="w-10 h-10 text-orange-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">SIP Investments</h3>
                 <p className="text-gray-400 mb-4">Systematic Investment Plans for disciplined wealth creation and long-term financial success.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Flexible Plans</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Top-up Facility</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Goal-based SIPs</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <GanttChart className="w-10 h-10 text-green-400 mb-4" />
+                <GanttChart className="w-10 h-10 text-orange-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Portfolio Management</h3>
                 <p className="text-gray-400 mb-4">Comprehensive portfolio management services with personalized strategies.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Risk Assessment</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Asset Allocation</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-green-400" />
+                    <ChevronRight className="w-4 h-4 text-orange-400" />
                     <span>Regular Rebalancing</span>
                   </li>
                 </ul>
@@ -406,12 +406,12 @@ const MetaarthHome = () => {
 
       <section className={`min-h-screen pt-4 px-4 -mt-24 transition-all duration-500 ${activeSection === 'metahealth' ? 'opacity-100' : 'opacity-0 hidden'}`}>
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-red-400/10 to-transparent rounded-3xl overflow-hidden border border-red-400/20 p-8">
+          <div className="bg-gradient-to-r from-green-400/10 to-transparent rounded-3xl overflow-hidden border border-green-400/20 p-8">
             <div className="flex items-center space-x-4 mb-8">
-              <Stethoscope className="w-16 h-16 text-red-400" />
+              <Stethoscope className="w-16 h-16 text-green-400" />
               <div>
                 <h2 className="text-4xl font-bold text-white">METAHEALTH</h2>
-                <p className="text-red-400">Healthcare Innovation & Solutions</p>
+                <p className="text-green-400">Healthcare Innovation & Solutions</p>
               </div>
             </div>
 
@@ -423,7 +423,7 @@ const MetaarthHome = () => {
                 </p>
               </div>
               <div className="bg-gray-800/50 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-red-400 mb-4">Healthcare Impact</h3>
+                <h3 className="text-xl font-semibold text-green-400 mb-4">Healthcare Impact</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-4 bg-gray-800 rounded-lg">
                     <div className="text-3xl font-bold text-white">1M+</div>
@@ -439,60 +439,60 @@ const MetaarthHome = () => {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <Flask className="w-10 h-10 text-red-400 mb-4" />
+                <Flask className="w-10 h-10 text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Pharmaceutical Research</h3>
                 <p className="text-gray-400 mb-4">Advanced research and development in pharmaceutical sciences.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Drug Development</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Clinical Trials</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Quality Control</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <HeartPulse className="w-10 h-10 text-red-400 mb-4" />
+                <HeartPulse className="w-10 h-10 text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Healthcare Technology</h3>
                 <p className="text-gray-400 mb-4">Digital solutions for modern healthcare delivery and management.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Telemedicine</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Health Records</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4  text-red-400" />
+                    <ChevronRight className="w-4 h-4  text-green-400" />
                     <span>Patient Care</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-all duration-300">
-                <Microscope className="w-10 h-10 text-red-400 mb-4" />
+                <Microscope className="w-10 h-10 text-green-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Medical Research</h3>
                 <p className="text-gray-400 mb-4">Pioneering research in medical science and healthcare innovation.</p>
                 <ul className="text-gray-300 space-y-2">
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Biotech Research</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Medical Devices</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <ChevronRight className="w-4 h-4 text-red-400" />
+                    <ChevronRight className="w-4 h-4 text-green-400" />
                     <span>Healthcare AI</span>
                   </li>
                 </ul>
