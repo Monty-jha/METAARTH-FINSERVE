@@ -45,6 +45,7 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const serviceButtonRef = useRef(null);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -52,7 +53,8 @@ export default function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && 
+          serviceButtonRef.current && !serviceButtonRef.current.contains(event.target)) {
         setMobileMenuOpen(false);
       }
     };
@@ -72,10 +74,21 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  // Handle window resize to close mobile menu on larger screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
+
   return (
     <nav className="bg-white fixed top-0 left-0 w-full z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16 md:h-20">
           <div className="flex-shrink-0">
             <Link 
               to="/Home" 
@@ -85,12 +98,16 @@ export default function Navbar() {
               }}
               className="block"
             >
-              <img src={logo} alt="Your Company Logo" className="h-10 sm:h-12 md:h-15 w-auto" />
+              <img 
+                src={logo} 
+                alt="Your Company Logo" 
+                className="h-8 sm:h-10 md:h-12 w-auto" 
+              />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-3 xl:space-x-4">
             {navigation.map(item => (
               <div key={item.name} className="relative" ref={item.isDropdown ? dropdownRef : null}>
                 <Link
@@ -103,11 +120,11 @@ export default function Navbar() {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }
                   }}
-                  className="group bg-white !text-orange-500 border border-orange-500 px-3 lg:px-5 py-2 rounded-full font-semibold shadow-md transition-colors duration-300 ease-in-out flex items-center justify-center hover:bg-orange-500 hover:text-white text-sm lg:text-base"
+                  className="group bg-white !text-orange-500 border border-orange-500 px-2 sm:px-3 lg:px-4 xl:px-5 py-1.5 sm:py-2 rounded-full font-semibold shadow-md transition-colors duration-300 ease-in-out flex items-center justify-center hover:bg-orange-500 hover:text-white text-xs sm:text-sm lg:text-base whitespace-nowrap"
                 >
                   <span className="group-hover:text-white">{item.name}</span>
                   {item.isDropdown && (
-                    <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform duration-300 ${dropdownOpen ? "rotate-180 group-hover:text-white" : "text-orange-500 group-hover:text-white"}`} />
+                    <ChevronDownIcon className={`ml-1 h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 ${dropdownOpen ? "rotate-180 group-hover:text-white" : "text-orange-500 group-hover:text-white"}`} />
                   )}
                 </Link>
 
@@ -118,10 +135,10 @@ export default function Navbar() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="absolute right-0 md:left-0 mt-3 w-72 lg:w-80 bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden"
+                      className="absolute right-0 md:left-0 mt-2 w-64 sm:w-72 lg:w-80 bg-white border border-gray-100 shadow-xl rounded-xl overflow-hidden z-50"
                     >
                       <div className="py-2">
-                        <motion.h3 className="px-4 py-3 text-lg font-semibold text-gray-800 border-b border-gray-100 bg-gray-50">
+                        <motion.h3 className="px-4 py-2 text-base sm:text-lg font-semibold text-gray-800 border-b border-gray-100 bg-gray-50">
                           Our Services
                         </motion.h3>
                         <div className="py-1">
@@ -135,31 +152,31 @@ export default function Navbar() {
                                     href={service.path}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-start px-4 py-3 hover:bg-orange-50 transition-colors duration-200"
+                                    className="flex items-start px-4 py-2 hover:bg-orange-50 transition-colors duration-200"
                                     onClick={() => {
                                       setDropdownOpen(false);
                                       window.scrollTo({ top: 0, behavior: "smooth" });
                                     }}
                                   >
-                                    <Icon className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
+                                    <Icon className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
                                     <div className="ml-3">
-                                      <div className="text-gray-800 font-medium">{service.name}</div>
-                                      <div className="text-sm text-gray-500 mt-0.5">{service.description}</div>
+                                      <div className="text-sm sm:text-base text-gray-800 font-medium">{service.name}</div>
+                                      <div className="text-xs sm:text-sm text-gray-500 mt-0.5">{service.description}</div>
                                     </div>
                                   </a>
                                 ) : (
                                   <Link
                                     to={service.path}
-                                    className="flex items-start px-4 py-3 hover:bg-orange-50 transition-colors duration-200"
+                                    className="flex items-start px-4 py-2 hover:bg-orange-50 transition-colors duration-200"
                                     onClick={() => {
                                       setDropdownOpen(false);
                                       window.scrollTo({ top: 0, behavior: "smooth" });
                                     }}
                                   >
-                                    <Icon className="h-6 w-6 text-orange-500 mt-1 flex-shrink-0" />
+                                    <Icon className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
                                     <div className="ml-3">
-                                      <div className="text-gray-800 font-medium">{service.name}</div>
-                                      <div className="text-sm text-gray-500 mt-0.5">{service.description}</div>
+                                      <div className="text-sm sm:text-base text-gray-800 font-medium">{service.name}</div>
+                                      <div className="text-xs sm:text-sm text-gray-500 mt-0.5">{service.description}</div>
                                     </div>
                                   </Link>
                                 )}
@@ -178,14 +195,15 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button
+              ref={serviceButtonRef}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-orange-500 hover:text-orange-600 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
+              className="inline-flex items-center justify-center p-1.5 rounded-md text-orange-500 hover:text-orange-600 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500"
             >
               <span className="sr-only">Open main menu</span>
               {mobileMenuOpen ? (
-                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                <XMarkIcon className="block h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
               ) : (
-                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                <Bars3Icon className="block h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -201,20 +219,38 @@ export default function Navbar() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-y-0 right-0 w-full bg-white shadow-xl md:hidden"
+            className="fixed inset-y-0 right-0 w-full sm:w-3/4 md:max-w-md bg-white shadow-xl md:hidden z-50 overflow-y-auto"
           >
-            <div className="pt-20 pb-3 px-4 space-y-1">
+            <div className="flex justify-between items-center p-4 border-b border-gray-100">
+              <Link 
+                to="/Home" 
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+                className="block"
+              >
+                <img src={logo} alt="Your Company Logo" className="h-8 sm:h-10 w-auto" />
+              </Link>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-1.5 rounded-md text-orange-500 hover:text-orange-600 hover:bg-orange-50 focus:outline-none"
+              >
+                <XMarkIcon className="block h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
+              </button>
+            </div>
+            <div className="py-3 px-2 sm:px-4 space-y-1">
               {navigation.map((item) => (
-                <div key={item.name}>
+                <div key={item.name} className="mb-1 sm:mb-2">
                   {item.isDropdown ? (
                     <div>
                       <button
                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
+                        className="w-full flex items-center justify-between px-3 sm:px-4 py-2.5 text-sm sm:text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
                       >
                         {item.name}
                         <ChevronDownIcon
-                          className={`ml-2 h-5 w-5 transition-transform duration-200 ${
+                          className={`ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 ${
                             mobileServicesOpen ? 'rotate-180' : ''
                           }`}
                         />
@@ -226,7 +262,7 @@ export default function Navbar() {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="pl-4"
+                            className="pl-2 sm:pl-4"
                           >
                             {services.map((service) => {
                               const Icon = service.icon;
@@ -234,13 +270,13 @@ export default function Navbar() {
                                 <Link
                                   key={service.name}
                                   to={service.path}
-                                  className="flex items-center px-4 py-3 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
+                                  className="flex items-start px-3 sm:px-4 py-2.5 text-xs sm:text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
                                   onClick={() => {
                                     setMobileMenuOpen(false);
                                     window.scrollTo({ top: 0, behavior: "smooth" });
                                   }}
                                 >
-                                  <Icon className="h-5 w-5 mr-3" />
+                                  <Icon className="h-4 w-4 sm:h-5 sm:w-5 mr-2 sm:mr-3 mt-0.5" />
                                   <div>
                                     <div className="font-medium">{service.name}</div>
                                     <div className="text-xs text-gray-500">{service.description}</div>
@@ -255,7 +291,7 @@ export default function Navbar() {
                   ) : (
                     <Link
                       to={item.path}
-                      className="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
+                      className="block px-3 sm:px-4 py-2.5 text-sm sm:text-base font-medium text-gray-700 hover:bg-orange-50 hover:text-orange-500 rounded-lg"
                       onClick={() => {
                         setMobileMenuOpen(false);
                         window.scrollTo({ top: 0, behavior: "smooth" });
