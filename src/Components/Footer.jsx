@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="px-2 sm:px-4 text-xs sm:text-sm">
           <span className="inline-block">Copyright © 2025 Metaarth Finserve Pvt Ltd. All rights Reserved.</span>
           <span className="hidden sm:inline mx-2">|</span>
-          <span className="inline-block">Designed, Developed & Content Powered by Accord Fintech Pvt.Ltd.</span>
+          <span className="inline-block">Designed, Developed & Content Powered by Microdigitall</span>
         </div>
       </div>
     </footer>
