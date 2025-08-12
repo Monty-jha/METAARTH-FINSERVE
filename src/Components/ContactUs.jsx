@@ -157,7 +157,7 @@ const ContactUs = () => {
                   type="text"
                   name="user_name"
                   placeholder="Enter your name"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 placeholder-gray-500"
                   required
                 />
               </div>
@@ -167,7 +167,7 @@ const ContactUs = () => {
                   type="email"
                   name="user_email"
                   placeholder="Enter your email"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 placeholder-gray-500"
                   required
                 />
               </div>
@@ -177,7 +177,7 @@ const ContactUs = () => {
                   name="message"
                   placeholder="Enter your message"
                   rows={4}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 placeholder-gray-500"
                   required
                 ></textarea>
               </div>
