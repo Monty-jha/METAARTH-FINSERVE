@@ -54,7 +54,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen py-12 px-6 lg:px-20 relative">
+    <div className="bg-gray-100 text-gray-900 min-h-screen py-12 px-6 lg:px-20 relative">
       {/* Blur effect when popup is open */}
       <div className={`transition-all duration-300 ${showPopup ? "blur-md" : ""}`}>
         <h2 className="text-4xl font-bold text-orange-500 mb-10 text-center">Contact Us</h2>
@@ -80,7 +80,7 @@ const ContactUs = () => {
             >
               <img src="https://static.thenounproject.com/png/3483587-200.png" alt="Corporate Icon" className="w-10 h-10" />
               <div>
-                <h2 className="text-xl font-semibold">Corporate Office:</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Corporate Office:</h2>
                 <p className="text-gray-700">
                   METAARTH FINSERVE PRIVATE LIMITED<br />
                   7, Ground Floor, Saran Chamber- II, Park Road, Hazratganj,<br />
@@ -97,7 +97,7 @@ const ContactUs = () => {
             >
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRED6ILoTh-KWKU0_PWELqhTxILh7WFdaxpFA&s" alt="Phone Icon" className="w-8 h-8" />
               <div>
-                <h2 className="text-xl font-semibold">Call Us</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Call Us</h2>
                 <p className="text-gray-700">9839906754</p>
                 <p className="text-gray-700">8104958203</p>
                 <p className="text-gray-700">8299559257</p>
@@ -112,7 +112,7 @@ const ContactUs = () => {
             >
               <img src="https://cdn.iconscout.com/icon/free/png-256/free-email-icon-download-in-svg-png-gif-file-formats--mail-envelope-message-miscellaneous-pack-icons-1713291.png?f=webp&w=256" alt="Email Icon" className="w-10 h-10" />
               <div>
-                <h2 className="text-xl font-semibold">Email Us</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Email Us</h2>
                 <p className="text-gray-700">metaarthfinserve@gmail.com</p>
               </div>
             </motion.div>
