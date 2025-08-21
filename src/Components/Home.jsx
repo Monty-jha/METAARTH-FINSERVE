@@ -14,7 +14,7 @@ function HomePage() {
       buttonLink: "/it-services",
     },
     {
-      url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2070&q=80",
+      url: "https://www.eurokidsindia.com/blog/wp-content/uploads/2023/11/innovative-learning-approaches-870x570.jpg",
       gifUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/65626933112811.56a01870441f4.gif",
       title: "Education",
       subtitle: "Future Learning",
